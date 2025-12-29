@@ -14,6 +14,36 @@ const studentsInfo = [
   { name: "Ethan", age: 13, classNumber: 7, favoriteSubject: "Art" },
 ];
 
+// function showStudentsData(studentsInfo) {
+//   let output = "";
+//   for (let student of studentsInfo) {
+//     output += `name: ${student.name} \n`;
+//     output += `age: ${student.age} \n`;
+//     output += `classNumber: ${student.classNumber} \n`;
+//     output += `favoriteSubject: ${student.favoriteSubject} \n`;
+//     output += `-------------------\n`;
+//   }
+//   return output;
+// }
+
+function showStudentsData(studentInfo) {
+  let output = "";
+
+  // ลูปชั้นนอก: วนลูปผ่าน Array ของนักเรียน (Outer Loop)
+  for (let i = 0; i < studentInfo.length; i++) {
+    let student = studentInfo[i];
+
+    // ลูปชั้นใน: วนลูปผ่าน Key ของ Object ในแต่ละคน (Inner Loop)
+    for (let key in student) {
+      output += `${key}: ${student[key]} \n`;
+    }
+
+    output += `-------------------\n`;
+  }
+
+  return output;
+}
+
 console.log(showStudentsData(studentsInfo));
 
 /*
